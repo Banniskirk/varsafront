@@ -354,30 +354,32 @@ class UpdatePhase1 extends Component {
                         </div>
                       </div>
                     )}
-                    <div>
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          this.props.updatePhase({
-                            id: this.props.product.id,
-                            phase: 2,
-                          });
-                          this.props.selectProduct(0);
-                        }}
-                        className={AllCompleted(
-                          this.props.product.paperwork,
-                          this.props.product.sample,
-                          this.props.product.info_required
-                        )}
-                      >
-                        ALL COMPLETED MOVE TO PHASE 2
-                      </button>
-                    </div>
                   </div>
                 )}
               </div>
             </div>
-            <div></div>
+            <div>
+              {' '}
+              <div className='btn-wide'>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.props.updatePhase({
+                      id: this.props.product.id,
+                      phase: 2,
+                    });
+                    this.props.selectProduct(0);
+                  }}
+                  className={AllCompleted(
+                    this.props.product.paperwork,
+                    this.props.product.sample,
+                    this.props.product.info_required
+                  )}
+                >
+                  ALL COMPLETED MOVE TO PHASE 2
+                </button>
+              </div>
+            </div>
           </form>
         </div>
       );
